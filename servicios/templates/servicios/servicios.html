@@ -1,0 +1,36 @@
+{% extends "webApp/base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+</head>
+
+<body>
+    {% for i in servicios %}
+
+    <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{i.imagen.url}}" alt="" style="width: 50%; height: 50%; object-fit: cover;">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">{{i.titulo}}</span>
+                <span class="section-heading-upper">{{i.contenido}}</span>
+              </h2>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+   {% endfor %}
+</body>
+
+</html>
+{% endblock %}
