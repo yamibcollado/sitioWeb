@@ -7,5 +7,4 @@ def home(request):
 def tienda(request):
     return render(request, "webApp/tienda.html")
 
-def contacto(request):
-    return render(request, "webApp/contacto.html")
+
