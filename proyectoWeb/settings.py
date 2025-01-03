@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'webApp',
     'servicios',
     'contacto',
+    'tienda',
 
 ]
 
