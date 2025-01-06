@@ -1,6 +1,8 @@
-
 def importe_total_carro(request):
-    total=0
-    if request.user.is_autheticated:
-        for key, value in request.session["carro"].items():
-            total=total+(float(value["precio"]*value["cantidad"]))
+    
+    carro = request.session.get('carro', {})
+
+    total = 0
+    for key, value in carro.items():
+        total += value['precio'] * value['cantidad'] 
+    return {'importe_total_carro': total}

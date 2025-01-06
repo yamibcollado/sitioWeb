@@ -14,32 +14,40 @@
 
 <body>
     <div class="container">
-    <div style="float:right;">
-        <p style="color:white">texto de prueba</p>
-    </div>
+        <div class="row" style="display: flex; width: 100%;">
 
-        <div class="row">
-            {% for producto in productos %}
-            <div class="col-md-3">
-                <div class="card" style="width: 100%; margin: 20px 20px;">
-                    <!-- Establecer altura fija para las imágenes -->
-                    <img src="{{producto.imagen.url}}"  class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;">
-                    
-                    <div class="card-body">
-                        <h5 class="card-title"> {{producto.nombre}} </h5>
-                        <p class="card-text"> &nbsp;$ {{producto.precio}} </p>
+            <!-- Columna para los productos -->
+            <div class="col-12 col-md-8" style="display: flex; flex-wrap: wrap;">
+                <div class="row" style="width: 100%;">
+                    {% for producto in productos %}
+                    <div class="col-6 col-md-4"> <!-- Cambié de col-md-4 a col-6 para dispositivos pequeños -->
+                        <div class="card" style="width: 100%; margin: 15px 15px;">
+                            <img src="{{producto.imagen.url}}" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title"> {{producto.nombre}} </h5>
+                                <p class="card-text"> &nbsp;$ {{producto.precio}} </p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success"> Agregar </a>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="card-footer text-center">
-                        <a href="#" class="btn btn-success"> Agregar </a>
-                    </div>
-
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
+
+            <!-- Columna para el total del carro (a la derecha) -->
+            <div class="col-12 col-md-4" style="display: flex; flex-direction: column; justify-content: flex-start; padding-left: 15px;">
+                <div style="background-color: rgba(254, 252, 252, 0.632); padding: 15px; margin: 16px 16px; border-radius: 5px;">
+                    {% include "tienda/carro/widget.html" %}
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
+
+
 
 
 </html>
