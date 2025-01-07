@@ -1,0 +1,34 @@
+{% extends "webApp/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <form method="post" action="" style="color: white;">
+        {% csrf_token %}
+        <div style="width: 85%; margin: auto; margin-bottom: 90px;">
+            
+            
+            <!-- Formulario con crispy_forms -->
+
+            {% if messages %}
+         
+            {% for mensaje in messages %}
+
+                <span class="alert alert-{{ mensaje.tags }} mt-3" role="alert">
+                    {{ mensaje }}
+                </span>
+
+            {% endfor %}
+          
+            {% endif %}
+            <br><br>
+            <h2 style="color: white">Registro</h2>
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success">Registrarse</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,40 @@
+{% extends "webApp/base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <form method="post" action="" style="color: white;">
+        {% csrf_token %}
+
+        <div style="width: 80%; margin: auto; margin-bottom: 80px;">
+            
+            
+            <!-- Mostrar mensajes de error alineados con el formulario -->
+            
+            {% if messages %}
+                <div class="row">
+                    {% for mensaje in messages %}
+                        <div class="col-12">
+                            <span class="alert alert-{{ mensaje.tags }} mt-3" role="alert">
+                                {{ mensaje }}
+                            </span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <br>
+            <h2 style="color: white">Ingreso</h2>
+
+            <!-- Formulario con crispy_forms -->
+            {{ form|crispy }}
+
+            <button type="submit" class="btn btn-success">Ingresar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+

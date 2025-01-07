@@ -18,12 +18,20 @@
 </head>
 
 <body>
-<!--
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-      
-        <span class="site-heading-lower">Gestión de Pedidos</span>
-      </h1>
--->
+
+<!-- Login -->
+<div style="text-align: right; margin-right: 100px; color: white;" class="container mt-2 mb-2">
+    
+  {% if user.is_authenticated %}
+
+  Bienvenido {{user.username}} &nbsp; &nbsp; <a href="{% url 'cerrar_sesion' %}" style="color:aliceblue">Cerrar sesion</a>
+
+  {% else %}
+
+  <a href="{% url 'logear' %}" style="color:aliceblue"> Ingresar</a> &nbsp; &nbsp; <a href="{% url 'autenticacion' %}" style="color:aliceblue">Registrarse</a>
+  {% endif %}
+  
+</div>
 
  <!-- Navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
