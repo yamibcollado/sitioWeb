@@ -39,7 +39,15 @@
             <!-- Columna para el total del carro (a la derecha) -->
             <div class="col-12 col-md-4" style="display: flex; flex-direction: column; justify-content: flex-start; padding-left: 15px;">
                 <div style="background-color: rgba(254, 252, 252, 0.632); padding: 15px; margin: 16px 16px; border-radius: 5px;">
-                    {% include "tienda/carro/widget.html" %}
+                    
+                    
+                    {% if request.user.is_authenticated %}
+                        {% include "tienda/carro/widget.html" %}
+                    {% else %}
+                        ¡Registrate para agregar productos!
+
+                    {% endif %}
+
                 </div>
             </div>
 

@@ -3,10 +3,11 @@ class Carro:
         self.request=request
         self.session=request.session
         carro=self.session.get("carro")
-        self.carro=carro
 
         if not carro:
             carro=self.session["carro"]={}
+        
+        self.carro=carro
            
     
     def agregar(self, producto):
