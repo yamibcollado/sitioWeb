@@ -9,3 +9,8 @@ Características adicionales del sitio:
 - CRUD de Productos: El sitio incluye un sistema de CRUD (Crear, Leer, Modificar y Eliminar) para la gestión de productos. Los administradores del sitio pueden agregar nuevos productos, actualizarlos o eliminarlos fácilmente desde el panel de administración de Django.
 - Carrito de Compras: Los usuarios pueden registrarse en el sitio para poder agregar productos a un carrito de compras. El carrito es gestionado de forma dinámica, permitiendo agregar o eliminar productos con facilidad.
 - Sistema de Registro de Usuarios: Los usuarios pueden registrarse en el sitio para facilitar la compra de productos y agregar artículos a su carrito.
+
+- Tecnologías utilizadas:
+Django: Framework backend para manejar la lógica del sitio, la base de datos y la autenticación de usuarios.
+HTML/CSS: Tecnologías frontend para crear una interfaz responsiva.
+Bootstrap: Framework CSS para garantizar que el sitio sea completamente responsivo y se vea bien en dispositivos móviles y de escritorio.
