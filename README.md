@@ -1,4 +1,5 @@
 Descripción del Proyecto:
+
 Es un sitio web de una aplicación básica desarrollada con Django, HTML, CSS y Bootstrap. Está diseñado para ofrecer una experiencia simple pero funcional, con un enfoque en la venta de productos en línea. El sitio cuenta con cuatro secciones principales:
 - Home/Inicio: Página principal donde los usuarios pueden encontrar una introducción a la tienda y navegación hacia otras secciones del sitio.
 - Tienda: Una sección dedicada a la visualización y compra de productos, donde los usuarios pueden explorar los diferentes productos disponibles.
